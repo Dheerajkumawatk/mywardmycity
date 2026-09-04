@@ -3,8 +3,16 @@ import { createServerClient, type CookieOptions } from '@supabase/ssr';
 
 type CookieToSet = { name: string; value: string; options: CookieOptions };
 
-const url = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+function getSupabaseConfig() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim();
+
+  if (!url || !key) {
+    throw new Error('Missing Supabase env: NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY');
+  }
+
+  return { url, key };
+}
 
 /**
  * Supabase client for Server Components / Route Handlers / Server Actions.
@@ -12,6 +20,7 @@ const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
  */
 export async function createClient() {
   const cookieStore = await cookies();
+  const { url, key } = getSupabaseConfig();
 
   return createServerClient(url, key, {
     cookies: {

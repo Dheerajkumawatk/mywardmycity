@@ -3,8 +3,12 @@ import { createServerClient, type CookieOptions } from '@supabase/ssr';
 
 type CookieToSet = { name: string; value: string; options: CookieOptions };
 
-const url = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+function getSupabaseConfig() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim();
+
+  return { url, key };
+}
 
 /**
  * Keeps the Supabase auth session fresh on every request and gates the admin
@@ -12,6 +16,12 @@ const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
  * to `/admin/login`.
  */
 export async function middleware(request: NextRequest) {
+  const { url, key } = getSupabaseConfig();
+
+  if (!url || !key) {
+    return NextResponse.next();
+  }
+
   let response = NextResponse.next({ request });
 
   const supabase = createServerClient(url, key, {
