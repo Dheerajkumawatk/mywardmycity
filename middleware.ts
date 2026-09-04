@@ -1,19 +1,8 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { createServerClient, type CookieOptions } from '@supabase/ssr';
-import { getSupabaseConfig } from '@/lib/supabase/config';
+import { getOptionalSupabaseConfig } from '@/lib/supabase/config';
 
 type CookieToSet = { name: string; value: string; options: CookieOptions };
-
-<<<<<<< HEAD
-const { url, key } = getSupabaseConfig();
-=======
-function getSupabaseConfig() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim();
-
-  return { url, key };
-}
->>>>>>> b2db0113b47479c26f7b254bd581580957996d68
 
 /**
  * Keeps the Supabase auth session fresh on every request and gates the admin
@@ -21,7 +10,7 @@ function getSupabaseConfig() {
  * to `/admin/login`.
  */
 export async function middleware(request: NextRequest) {
-  const { url, key } = getSupabaseConfig();
+  const { url, key } = getOptionalSupabaseConfig();
 
   if (!url || !key) {
     return NextResponse.next();
