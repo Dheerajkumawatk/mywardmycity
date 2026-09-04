@@ -1,21 +1,7 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Noto_Sans_Devanagari } from 'next/font/google';
 import './globals.css';
 
 import { SITE } from '@/data/content';
-
-const notoSans = Noto_Sans_Devanagari({
-  subsets: ['devanagari', 'latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  display: 'swap',
-  variable: '--font-noto-sans-devanagari',
-});
-
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-});
 
 const siteUrl = SITE.url;
 const title = `${SITE.name} — Digital Election Campaign Services | ${SITE.legalName}`;
@@ -80,7 +66,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="hi" className={`${notoSans.variable} ${inter.variable}`}>
+    <html lang="hi">
       <body className="min-h-dvh">{children}</body>
     </html>
   );

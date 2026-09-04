@@ -60,7 +60,7 @@ export const SITE = {
     { dHi: 'रविवार', t: '10:00 AM - 6:00 PM' },
   ],
   copyrightHi:
-    '© 2025 MyCityMyWard.com | Bharat Pehchan Pvt. Ltd. | सभी अधिकार सुरक्षित',
+    '© 2026 भारत पहचान. सभी अधिकार सुरक्षित। Citiline Technologies Private Limited',
 } as const;
 
 export const SOCIAL: { label: string; href: string; icon: 'facebook' | 'instagram' | 'youtube' | 'whatsapp' }[] = [
