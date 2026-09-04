@@ -44,7 +44,7 @@ export function Packages({
 
         <div
           className={cn(
-            'grid items-start gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6',
+            'grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3',
             showHeading ? 'mt-12' : 'mt-2',
           )}
         >
@@ -57,7 +57,7 @@ export function Packages({
                 className={cn(
                   'flex h-full flex-col overflow-hidden rounded-card bg-white',
                   p.popular
-                    ? 'border-2 border-pkg-orange shadow-lift xl:-translate-y-4'
+                    ? 'border-2 border-pkg-orange shadow-lift lg:-translate-y-2'
                     : 'border border-navy/12 shadow-card',
                 )}
               >
@@ -67,20 +67,20 @@ export function Packages({
                   </div>
                 ) : null}
 
-                <div className={cn('flex flex-1 flex-col p-5', !p.popular && 'pt-6')}>
+                <div className={cn('flex flex-1 flex-col p-6', !p.popular && 'pt-7')}>
                   <div className="flex min-h-[3.25rem] flex-col justify-center text-center">
                     <h3 className={cn('text-sm font-extrabold uppercase leading-tight tracking-wide', s.text)}>
                       {p.nameEn}
                     </h3>
                   </div>
-                  <p className={cn('text-center text-[1.7rem] font-extrabold leading-none', s.text)}>
+                  <p className={cn('text-center text-[1.9rem] font-extrabold leading-none', s.text)}>
                     {p.priceHi}
                   </p>
 
-                  <ul className="mt-4 flex-1 space-y-2.5 border-t border-navy/10 pt-4 text-[0.82rem] text-ink">
+                  <ul className="mt-5 flex-1 space-y-3 border-t border-navy/10 pt-5 text-sm text-ink">
                     {p.features.map((f) => (
                       <li key={f} className="flex gap-2">
-                        <Check className={cn('mt-0.5 h-3.5 w-3.5 shrink-0', s.check)} aria-hidden="true" />
+                        <Check className={cn('mt-0.5 h-4 w-4 shrink-0', s.check)} aria-hidden="true" />
                         <span>{f}</span>
                       </li>
                     ))}

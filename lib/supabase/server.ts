@@ -1,10 +1,10 @@
 import { cookies } from 'next/headers';
 import { createServerClient, type CookieOptions } from '@supabase/ssr';
+import { getSupabaseConfig } from './config';
 
 type CookieToSet = { name: string; value: string; options: CookieOptions };
 
-const url = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const { url, key } = getSupabaseConfig();
 
 /**
  * Supabase client for Server Components / Route Handlers / Server Actions.

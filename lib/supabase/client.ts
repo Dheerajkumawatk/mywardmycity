@@ -1,9 +1,9 @@
 import { createBrowserClient } from '@supabase/ssr';
-
-const url = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+import { getSupabaseConfig } from './config';
 
 /** Supabase client for use in Client Components / browser code. */
 export function createClient() {
+  const { url, key } = getSupabaseConfig();
+
   return createBrowserClient(url, key);
 }
