@@ -39,6 +39,8 @@ export type Package = {
   badgeHi?: string;
 };
 
+const DEFAULT_SITE_URL = 'http://localhost:3000';
+
 export const SITE = {
   name: 'MyCityMyWard.com',
   brandShort: 'MyCityMyWard',
@@ -53,7 +55,7 @@ export const SITE = {
   whatsappHref: 'https://wa.me/918290123456',
   addressLine1: 'Bharat Pehchan Pvt. Ltd.',
   addressLine2: 'Jaipur, Rajasthan - 302001',
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
+  url: process.env.NEXT_PUBLIC_SITE_URL?.trim() || DEFAULT_SITE_URL,
   locale: 'hi-IN',
   hours: [
     { dHi: 'सोम – शनि', t: '9:30 AM - 8:00 PM' },
