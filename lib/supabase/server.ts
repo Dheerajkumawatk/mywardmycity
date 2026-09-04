@@ -4,7 +4,20 @@ import { getSupabaseConfig } from './config';
 
 type CookieToSet = { name: string; value: string; options: CookieOptions };
 
+<<<<<<< HEAD
 const { url, key } = getSupabaseConfig();
+=======
+function getSupabaseConfig() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim();
+
+  if (!url || !key) {
+    throw new Error('Missing Supabase env: NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY');
+  }
+
+  return { url, key };
+}
+>>>>>>> b2db0113b47479c26f7b254bd581580957996d68
 
 /**
  * Supabase client for Server Components / Route Handlers / Server Actions.
@@ -12,6 +25,7 @@ const { url, key } = getSupabaseConfig();
  */
 export async function createClient() {
   const cookieStore = await cookies();
+  const { url, key } = getSupabaseConfig();
 
   return createServerClient(url, key, {
     cookies: {

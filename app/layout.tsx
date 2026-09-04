@@ -3,7 +3,7 @@ import './globals.css';
 
 import { SITE } from '@/data/content';
 
-const siteUrl = SITE.url;
+const siteUrl = SITE.url?.trim() || 'http://localhost:3000';
 const title = `${SITE.name} — Digital Election Campaign Services | ${SITE.legalName}`;
 const description =
   'MyCityMyWard.com by Bharat Pehchan provides candidate websites, digital profiles, posters, reels, videos, social media management, WhatsApp campaigns and digital war room support for Rajasthan Nagar Nikay Election 2026.';
