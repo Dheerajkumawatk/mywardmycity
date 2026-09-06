@@ -1,6 +1,5 @@
-import { Phone, Mail } from 'lucide-react';
-import { SITE, SOCIAL } from '@/data/content';
-import { SocialIcon } from '@/components/ui/SocialIcon';
+import { Phone } from 'lucide-react';
+import { SITE } from '@/data/content';
 
 /**
  * Thin utility bar above the header. Carries the positioning line and the
@@ -20,30 +19,7 @@ export function TopBar() {
             <Phone className="h-3.5 w-3.5 text-jaipur-saffron" aria-hidden="true" />
             <span>Helpline: {SITE.phone}</span>
           </a>
-          <span aria-hidden="true" className="text-white/25">|</span>
-          <a
-            href={`mailto:${SITE.email}`}
-            className="inline-flex items-center gap-1.5 hover:text-white"
-          >
-            <Mail className="h-3.5 w-3.5 text-jaipur-saffron" aria-hidden="true" />
-            <span>{SITE.email}</span>
-          </a>
-
-          <ul className="flex items-center gap-2.5 pl-1">
-            {SOCIAL.map((s) => (
-              <li key={s.label}>
-                <a
-                  href={s.href}
-                  aria-label={s.label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/70 transition-colors hover:text-white"
-                >
-                  <SocialIcon name={s.icon} className="h-4 w-4" />
-                </a>
-              </li>
-            ))}
-          </ul>
+          {/* Email and social icons hidden until live links are ready. */}
         </div>
       </div>
     </div>

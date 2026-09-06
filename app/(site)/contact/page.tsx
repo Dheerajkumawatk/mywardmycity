@@ -9,7 +9,7 @@ const h = PAGE_HEADERS.contact;
 
 export const metadata: Metadata = {
   title: 'Contact for Election Campaign',
-  description: `${SITE.name} से contact करें: call ${SITE.phone}, email ${SITE.email} या WhatsApp. Candidate website, posters, reels, social media और digital war room support के लिए आज बात करें।`,
+  description: `${SITE.name} से contact करें: call ${SITE.phone} या WhatsApp. Candidate website, posters, reels, social media और digital war room support के लिए आज बात करें।`,
   keywords: [
     'contact election campaign agency',
     'candidate website contact',

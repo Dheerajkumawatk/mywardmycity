@@ -1,8 +1,7 @@
 import Link from 'next/link';
-import { Phone, Mail, MapPin } from 'lucide-react';
-import { SITE, SOCIAL, FOOTER } from '@/data/content';
+import { Phone, MapPin } from 'lucide-react';
+import { SITE, FOOTER } from '@/data/content';
 import { Logo } from './Logo';
-import { SocialIcon } from '@/components/ui/SocialIcon';
 
 export function Footer() {
   return (
@@ -12,21 +11,7 @@ export function Footer() {
           <div>
             <Logo onDark />
             <p className="mt-4 max-w-xs text-sm leading-relaxed">{FOOTER.aboutHi}</p>
-            <ul className="mt-4 flex items-center gap-3">
-              {SOCIAL.map((s) => (
-                <li key={s.label}>
-                  <a
-                    href={s.href}
-                    aria-label={s.label}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-white/20 hover:text-white"
-                  >
-                    <SocialIcon name={s.icon} className="h-4 w-4" />
-                  </a>
-                </li>
-              ))}
-            </ul>
+            {/* Social icons hidden until live links are ready. */}
           </div>
 
           <nav aria-label="त्वरित लिंक">
@@ -64,15 +49,7 @@ export function Footer() {
                   {SITE.phone}
                 </a>
               </li>
-              <li>
-                <a
-                  href={`mailto:${SITE.email}`}
-                  className="inline-flex items-center gap-2 hover:text-white"
-                >
-                  <Mail className="h-4 w-4 shrink-0 text-jaipur-saffron" aria-hidden="true" />
-                  {SITE.email}
-                </a>
-              </li>
+              {/* Email hidden until the public inbox is ready. */}
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-jaipur-saffron" aria-hidden="true" />
                 <span>

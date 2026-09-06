@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, MapPin, Clock } from 'lucide-react';
 import { SITE } from '@/data/content';
 import { SocialIcon } from '@/components/ui/SocialIcon';
 
@@ -38,18 +38,7 @@ export function ContactChannels() {
             </span>
           </a>
 
-          <a
-            href={`mailto:${SITE.email}`}
-            className="flex items-start gap-4 rounded-card border border-navy/12 bg-white p-5 shadow-card transition-colors hover:border-navy/25"
-          >
-            <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-surface">
-              <Mail className="h-5 w-5 text-jaipur-saffron" aria-hidden="true" />
-            </span>
-            <span>
-              <span className="block text-sm font-bold text-navy">ईमेल</span>
-              <span className="mt-0.5 block break-all text-sm text-ink-muted">{SITE.email}</span>
-            </span>
-          </a>
+          {/* Email card hidden until the public inbox is ready. */}
 
           <div className="flex items-start gap-4 rounded-card border border-navy/12 bg-white p-5 shadow-card">
             <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-surface">

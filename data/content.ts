@@ -49,10 +49,10 @@ export const SITE = {
   tagline: 'Digital Pehchan, Jeet Ki Udaan!',
   taglineHi:
     'राजस्थान के नगर निकाय चुनाव 2026 के लिए डिजिटल अभियान का सबसे भरोसेमंद साथी',
-  phone: '8290 123 456',
-  phoneHref: 'tel:+918290123456',
+  phone: '+91 7891-131-132',
+  phoneHref: 'tel:+917891131132',
   email: 'support@mycitymyward.com',
-  whatsappHref: 'https://wa.me/918290123456',
+  whatsappHref: 'https://wa.me/917891131132',
   addressLine1: 'Bharat Pehchan Pvt. Ltd.',
   addressLine2: 'Jaipur, Rajasthan - 302001',
   url: process.env.NEXT_PUBLIC_SITE_URL?.trim() || DEFAULT_SITE_URL,

@@ -65,7 +65,7 @@ export default function TermsPage() {
 
         <h2>7. संपर्क</h2>
         <p>
-          {SITE.legalName}, {SITE.addressLine2} · {SITE.phone} · {SITE.email}
+          {SITE.legalName}, {SITE.addressLine2} · {SITE.phone}
         </p>
       </div>
     </div>

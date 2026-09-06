@@ -56,7 +56,7 @@ export default function PrivacyPage() {
         <h2>5. आपके अधिकार</h2>
         <p>
           आप अपनी जानकारी तक पहुँच, सुधार या विलोपन का अनुरोध{' '}
-          <a href={`mailto:${SITE.email}`}>{SITE.email}</a> पर लिख कर कर सकते हैं।
+          <Link href="/contact">संपर्क फ़ॉर्म</Link> के माध्यम से कर सकते हैं।
         </p>
 
         <h2>6. नीति में परिवर्तन</h2>
@@ -64,7 +64,7 @@ export default function PrivacyPage() {
 
         <h2>7. संपर्क</h2>
         <p>
-          {SITE.legalName}, {SITE.addressLine2} · {SITE.phone} · {SITE.email}
+          {SITE.legalName}, {SITE.addressLine2} · {SITE.phone}
         </p>
       </div>
     </div>
